@@ -3,10 +3,10 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "rstools application to read the general purpose input line from the FPGA" 
 SECTION = "rstools" 
 LICENSE = "OPEN" 
-PR = "r0"
-#LIC_FILES_CHKSUM = "file://LICENSE;md5=a974ab7c84f6d979b8b6fa3dc7812ab3"
+PR = "r0" 
+LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
 SRC_URI = "gitsm://github.com/robseb/rstoolsCY5.git;protocol=https"
-SRCREV = "89f383ee264f52497b3287c15fb5c72fb40ebada"
+SRCREV = "87b5d45e84844e8cc3120f018557015c"
 # use  git rev-parse HEAD to update
 
 inherit cmake
