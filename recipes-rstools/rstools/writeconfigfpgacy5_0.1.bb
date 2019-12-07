@@ -4,9 +4,9 @@ DESCRIPTION = "rstools application to write a new configuration to the FPGA fabr
 SECTION = "rstools" 
 LICENSE = "OPEN" 
 PR = "r0"
-LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
-SRC_URI = "gitsm://github.com/robseb/rstoolsCY5.git;protocol=https"
-SRCREV = "47fcd2a50cade4a4abd55adf5ccad572a3815ced"
+LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=bff2b7959c4b3958a8ae19f6a39a59ac"
+SRC_URI = "gitsm://github.com/robseb/rstools.git;protocol=https"
+SRCREV = "259251b7b0be412026747285a0cf41fd4018c326" 
 # use  git rev-parse HEAD to update
 
 inherit cmake
