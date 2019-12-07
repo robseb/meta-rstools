@@ -11,10 +11,10 @@ SRCREV = "259251b7b0be412026747285a0cf41fd4018c326"
 
 inherit cmake
 
-S = "${WORKDIR}/git/FPGA-WriteBridge"
+S = "${WORKDIR}/git/FPGA-writeBridge"
 FILES_${PN} += "${bindir}"
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 FPGA-WriteBridge ${D}${bindir}
+    install -m 0755 FPGA-writeBridge ${D}${bindir}
 }
