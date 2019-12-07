@@ -4,9 +4,9 @@ DESCRIPTION = "rstools application to read any bridge to FPGA address"
 SECTION = "rstools" 
 LICENSE = "OPEN" 
 PR = "r0"
-#LIC_FILES_CHKSUM = "file://LICENSE;md5=a974ab7c84f6d979b8b6fa3dc7812ab3"
+LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
 SRC_URI = "gitsm://github.com/robseb/rstoolsCY5.git;protocol=https"
-SRCREV = "89f383ee264f52497b3287c15fb5c72fb40ebada" 
+SRCREV = "47fcd2a50cade4a4abd55adf5ccad572a3815ced" 
 # use  git rev-parse HEAD to update
 
 inherit cmake
