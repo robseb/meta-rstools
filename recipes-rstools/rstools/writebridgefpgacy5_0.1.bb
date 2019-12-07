@@ -14,8 +14,7 @@ inherit cmake
 S = "${WORKDIR}/git/FPGA-writeBridge"
 FILES_${PN} += "${bindir}"
 
-do_install() 
-{
+do_install() {
     install -d ${D}${bindir}
     install -m 0755 FPGA-writeBridge ${D}${bindir}
 }
