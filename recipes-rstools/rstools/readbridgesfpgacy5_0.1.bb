@@ -11,10 +11,10 @@ SRCREV = "66b0d5519c897e8e8404faa7fd4f579a375f48c8"
 
 inherit cmake
 
-S = "${WORKDIR}/git/FPGA-readBridge"
+S = "${WORKDIR}/git/FPGA-readBrdige"
 FILES_${PN} += "${bindir}"
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 FPGA-readBridge ${D}${bindir}
+    install -m 0755 FPGA-readBrdige ${D}${bindir}
 }
