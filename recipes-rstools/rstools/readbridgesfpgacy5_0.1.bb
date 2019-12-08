@@ -2,7 +2,7 @@
 SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "rstools application to read any bridge to FPGA address" 
 SECTION = "rstools" 
-LICENSE = "CLOSE" 
+LICENSE = "GPL-2"
 PR = "r0"
 LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=bff2b7959c4b3958a8ae19f6a39a59ac"
 SRC_URI = "gitsm://github.com/robseb/rstools.git;protocol=https"
