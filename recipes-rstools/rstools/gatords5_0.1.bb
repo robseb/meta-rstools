@@ -9,8 +9,6 @@ PV = "6.7+git${SRCPV}"
 
 SRC_URI = "git://github.com/ARM-software/gator.git;protocol=http;branch=master \
            file://gator.init \
-           file://DX910-SW-99002-r8p1-00rel0.tgz \
-           file://0001-disable-stripping-debug-info.patch \
 "
 S = "${WORKDIR}/git"
 
@@ -18,7 +16,6 @@ inherit update-rc.d module
 
 RDEPENDS_${PN} = " \
         libgles2 \
-        kernel-module-mali \
 "
 
 LDFLAGS=''
@@ -31,7 +28,6 @@ do_compile() {
 
   #Build gator.ko
   oe_runmake -C ${STAGING_KERNEL_BUILDDIR} ARCH=${ARCH} CONFIG_GATOR=m CONFIG_GATOR_WITH_MALI_SUPPORT=y CONFIG_GATOR_MALI_4XXMP=y \
-  CONFIG_GATOR_MALI_4XXMP_PATH="${WORKDIR}/DX910-SW-99002-r8p1-00rel0/driver/src/devicedrv/mali/" M=${S}/driver modules
 }
 
 do_install() {
