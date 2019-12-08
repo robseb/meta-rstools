@@ -7,8 +7,7 @@ LIC_FILES_CHKSUM = "file://driver/COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 SRCREV = "7ca6004c0b05138c49b9b21e0045487f55a60ab6"
 PV = "5.22+git${SRCPV}"
 
-SRC_URI = "git://git.linaro.org/arm/ds5/gator.git;protocol=http;branch=linaro \
-           file://gator.init"
+SRC_URI = "git://git.linaro.org/arm/ds5/gator.git;protocol=http;branch=linaro"
 
 S = "${WORKDIR}/git"
 
