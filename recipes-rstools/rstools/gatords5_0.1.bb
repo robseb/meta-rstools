@@ -12,9 +12,6 @@ SRC_URI = "git://github.com/ARM-software/gator.git;protocol=http;branch=master \
            file://DX910-SW-99002-r8p1-00rel0.tgz \
            file://0001-disable-stripping-debug-info.patch \
 "
-
-COMPATIBLE_MACHINE = "zynqmp"
-
 S = "${WORKDIR}/git"
 
 inherit update-rc.d module
@@ -51,5 +48,4 @@ FILES_${PN} = " \
   ${sbindir}/gator.ko \
 "
 
-INITSCRIPT_NAME = "gator"
 INITSCRIPT_PARAMS = "defaults 66"
