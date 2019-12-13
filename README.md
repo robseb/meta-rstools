@@ -189,7 +189,7 @@ ___
           bitbake-layers add-layer /home/<user name>/poky/meta-rstools/
        ````
   3. Include the rstools-command to the Yocto Linux
-    * Open `poky/build/conf/local.conf' and add following snippet to thr `conf.local` file: 
+    * Open `poky/build/conf/local.conf` and add following snippet to thr `conf.local` file: 
        ````conf
         IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
        ````
