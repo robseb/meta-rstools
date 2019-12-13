@@ -5,6 +5,13 @@
 With a single command it is possible to change FPGA configuration or to read and write the *ARM AXI-Bridge* to the FPGA fabric. 
 The layer is a part of [*rsYocto*](https://github.com/robseb/rsyocto)
 
+<br>
+
+![Alt text](FPGAConfigurationAction.gif?raw=true "Write FPGA Configuration")
+
+**Write the FPGA configuration with a Linux single command** 
+
+___
 ## Features 
 
 * **The layer adds following features to the final Linux command set:**
