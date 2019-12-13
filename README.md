@@ -9,7 +9,7 @@ The layer is a part of [*rsYocto*](https://github.com/robseb/rsyocto)
 
 ![Alt text](FPGAConfigurationAction.gif?raw=true "Write FPGA Configuration")
 
-**Write the FPGA configuration with a Linux single command** 
+**Write the FPGA configuration with a single Linux command** 
 
 ___
 ## Features 
