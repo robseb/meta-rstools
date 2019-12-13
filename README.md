@@ -86,7 +86,7 @@ ___
                                                     Succses:1
           ````
       * Required MSEL-Bit Switch Selection to allow Linux to change the FPGA configuration:
-        * `MSEL= 00100' : Passive parallel x16 with no AES and Data compression
+        * `MSEL= 00100`: Passive parallel x16 with no AES and Data compression
         * `MSEL= 00101`: Passive parallel x16  with AES and Data compression
 
  * **AVALON/AXI Bridge Read** 
@@ -106,7 +106,7 @@ ___
                 suffix: -b -> only decimal result output
          ````
 * **AVALON/AXI Bridge Write** 
-    * Writing a 32 Bit to Address of the HPS-to-FPGA- or Lightweight-HPS-to-FPGA Bridge interface
+    * Writing a 32 Bit Value to the HPS-to-FPGA- or Lightweight-HPS-to-FPGA Bridge interface
         ````bash
         FPGA-writeBridge
         ````
@@ -133,7 +133,7 @@ ___
                                                   Succses:1
          ````
 * **GPI Register Read** 
-    * Reading 32 Bit direct access Register (written by the FPGA)
+    * Reading the 32 Bit direct access Register (written by the FPGA)
         ````bash
         FPGA-gpiRead
         ````
@@ -148,7 +148,7 @@ ___
                       read gpi as decimal value
          ````
 * **GPO Register Write** 
-    * Writing a 32 Bit direct access Register to the FPGA
+    * Writing the 32 Bit direct access Register to the FPGA
         ````bash
         FPGA-gpoWrite
         ````
@@ -189,7 +189,7 @@ ___
           bitbake-layers add-layer /home/<user name>/poky/meta-rstools/
        ````
   3. Include the rstools-command to the Yocto Linux
-    * Open `poky/build/conf/local.conf` and add following snippet to thr `conf.local` file: 
+    * Open `poky/build/conf/local.conf` and add following snippet to the `conf.local` file: 
        ````conf
         IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
        ````
@@ -204,7 +204,7 @@ The source code of this layer is available in my [*rstools*](https://github.com/
 # Author
 * **Robin Sebastian**
 
-*meta-rstools* a project, that I have fully developed on my own. No companies are involved in this project.
+*meta-rstools* and *rstools* is a project, that I have fully developed on my own. No companies are involved in this project.
 Today I'm a Master Student of electronic engineering with the major embedded systems. 
 
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](mailto:mail@robseb.de)
