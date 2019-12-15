@@ -6,7 +6,7 @@ LICENSE = "GPL-2"
 PR = "r0"
 LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
 SRC_URI = "gitsm://github.com/robseb/rstools.git;protocol=https"
-SRCREV = "259251b7b0be412026747285a0cf41fd4018c326" 
+SRCREV = "d9cab94e6c4c94efa1584e2aeb0c1b0f22758685" 
 # use  git rev-parse HEAD to update
 
 inherit cmake
