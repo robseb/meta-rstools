@@ -184,13 +184,13 @@ ___
           git clone https://github.com/robseb/meta-rstools.git
        ````
   2. Include the layer to Yocto
-    * Navigate to the bitbake `build`folder and execute
-       ````bash
-          bitbake-layers add-layer /home/<user name>/poky/meta-rstools/
+    * Open `poky/build/conf/bblayers.conf` and add following snippet to the `bblayers.conf` file: 
+       ````
+          /home/<user name>/poky/meta-rstools \
        ````
   3. Include the rstools-command to the Yocto Linux
     * Open `poky/build/conf/local.conf` and add following snippet to the `conf.local` file: 
-       ````conf
+       ````
         IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
        ````
   4.  Use busybox to build the Linux (**done**)
