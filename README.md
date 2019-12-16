@@ -173,7 +173,7 @@ ___
          
 ## Add the layer to the Yocto Project   
 * Following steps are required to add the *meta-rstool* layer to the Yocto project
-  * Be sure, that the HPS Bridge are enabled before Linux boots
+  * Be sure, that the HPS Bridges are enabled before Linux boots
     * To realise that enable the Bridges with following u-boot boot-script command
         ````bash
           echo --- enable HPS-to-FPGA, FPGA-to-HPS, LWHPS-to-FPGA bridges ---
