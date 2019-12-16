@@ -193,7 +193,7 @@ ___
        ````
         IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
        ````
-  4.  Use busybox to build the Linux (**done**)
+  4.  Use bitbake to build the Linux (**done**)
 
 ## Source Code 
 The source code of this layer is available in my [*rstools*](https://github.com/robseb/rstools) repository.
