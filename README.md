@@ -190,13 +190,18 @@ ___
        ````
   3. Include the rstools-command to the Yocto Linux
     * Open `poky/build/conf/local.conf` and add following snippet to the `conf.local` file: 
-       ````
-        IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
-       ````
+      * For Intel Cyclone V Soc-FPGAs:
+        ````
+         IMAGE_INSTALL_append += "mselfpgacy5 readbridgesfpgacy5 readfgpipgacy5 resetfabricfpgacy5 statusfpgacy5 writebridgefpgacy5 writeconfigfpgacy5 writegpofpgacy5 "
+        ````
+      * For the Intel Arria 10 SX :
+        ````
+        IMAGE_INSTALL_append = " mselfpgaA10 readbridgesfpgaA10 readfgpipgA10  statusfpgaA10 writebridgefpgaA10  "
+        ````
   4.  Use bitbake to build the Linux (**done**)
 
 ## Source Code 
-The source code of this layer is available in my [*rstools*](https://github.com/robseb/rstools) repository.
+The source code of this layer is available in my [*rstoolsCY5*](https://github.com/robseb/rstools) and [*rstoolsA10*](https://github.com/robseb/rstoolsA10)  repository.
 
 
 <br>
