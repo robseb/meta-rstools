@@ -196,7 +196,7 @@ ___
         ````
       * For the Intel Arria 10 SX :
         ````
-        IMAGE_INSTALL_append = " mselfpgaA10 readbridgesfpgaA10 readfgpipgA10  statusfpgaA10 writebridgefpgaA10  "
+        IMAGE_INSTALL_append = " mselfpgaA10 readbridgesfpgaa10 readfgpipga10  statusfpgaa10 writebridgefpgaa10  "
         ````
   4.  Use bitbake to build the Linux (**done**)
 
