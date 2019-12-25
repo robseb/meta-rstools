@@ -1,37 +1,40 @@
-DESCRIPTION = "ARM DS5 Gator Debugger"
-AUTHOR = "Jim Rucker <jrucker@altera.com>"
-SECTION = "kernel"
-LICENSE = "GPLv2"
-LIC_FILES_CHKSUM="file://README.md;md5=fd73f0498116d3d0c987310ab2def003"
-S="${WORKDIR}/git"
-BP="${BPN}"
-DEPENDS = "virtual/kernel"
-inherit module
+SUMMARY = "DS-5 Gator daemon"
+DESCRIPTION = "Target-side daemon gathering data for ARM Streamline Performance Analyzer."
 
-SRC_URI = "git://git.linaro.org/git-ro/arm/ds5/gator.git;protocol=http"
-SRCREV="7ca6004c0b05138c49b9b21e0045487f55a60ab6"
-INHIBIT_PACKAGE_STRIP="1"
+LICENSE = "GPL-2"
+LIC_FILES_CHKSUM = "file://driver/COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-INSANE_SKIP_${PN}-dev += " ldflags"
-INSANE_SKIP_${PN} += " ldflags"
+SRCREV = "7ca6004c0b05138c49b9b21e0045487f55a60ab6"
+PV = "5.22+git${SRCPV}"
+
+SRC_URI = "git://git.linaro.org/arm/ds5/gator.git;protocol=http;branch=linaro \
+           file://gator.init"
+
+S = "${WORKDIR}/git"
+
+inherit update-rc.d
+
+# Since this is c++ code we need to both compile and link with CXX
+#| PerfSource.o: In function `PerfSource::~PerfSource()':
+#| /usr/src/debug/gator/5.22+gitAUTOINC+7ca6004c0b-r0/git/daemon/PerfSource.cpp:128: undefined reference to `operator delete(void*, unsigned long)'
+CCLD = "${CXX}"
+
+EXTRA_OEMAKE = "'CFLAGS=${CFLAGS} ${TARGET_CC_ARCH} -D_DEFAULT_SOURCE -DETCDIR=\"${sysconfdir}\"' \
+    'LDFLAGS=${LDFLAGS} ${TARGET_CC_ARCH}' 'CROSS_COMPILE=${TARGET_PREFIX}' \
+    'CXXFLAGS=${CXXFLAGS} ${TARGET_CC_ARCH} -fno-rtti'"
 
 do_compile() {
-	echo "Using Custom compile step"
-	cd ${S}/driver
-	${MAKE} -C ${STAGING_KERNEL_DIR} M=`pwd` ARCH=${TARGET_ARCH} CROSS_COMPILE=${TARGET_PREFIX} modules
-	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
-	cd ${S}/daemon
-	${MAKE} -j5 ARCH="arm" CROSS_COMPILE=${TARGET_PREFIX}
+    # The regular makefile tries to be 'smart' by hardcoding ABI assumptions, let's use the clean makefile for everything.
+    cp ${S}/daemon/Makefile_aarch64 ${S}/daemon/Makefile
+    # Allow using a differnt linker than $(CC)
+    sed -i -e 's:$(CC) $(LDFLAGS):$(CCLD) $(LDFLAGS):' ${S}/daemon/common.mk
+    oe_runmake -C daemon CC='${CC}' CXX='${CXX}'
 }
 
 do_install() {
-
-	INIT_DIR=${D}${sysconfdir}/init.d/
-	install -d ${INIT_DIR}
-	install -m 0644 ${S}/driver/gator.ko ${INIT_DIR}
-        install -m 0755 ${S}/daemon/gatord ${INIT_DIR}/gatord
-	echo -e "#!/bin/bash\n/etc/init.d/gatord & 2>/dev/null" > ${INIT_DIR}/rungator.sh
-	chmod a+x ${INIT_DIR}/rungator.sh
+    install -D -p -m0755 daemon/gatord ${D}/${sbindir}/gatord
+    install -D -p -m0755 ${WORKDIR}/gator.init ${D}/${sysconfdir}/init.d/gator
 }
 
-FILES_${PN} = "${sysconfdir}/init.d/gator.ko ${sysconfdir}/init.d/gatord ${sysconfdir}/init.d/rungator.sh"
+INITSCRIPT_NAME = "gator"
+INITSCRIPT_PARAMS = "defaults 66"
