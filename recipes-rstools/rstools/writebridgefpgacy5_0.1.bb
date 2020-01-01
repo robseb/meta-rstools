@@ -1,4 +1,4 @@
-# Robin Sebastian (https://github.com/robseb) 2019
+# Robin Sebastian (https://github.com/robseb) 2019-2020
 SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "rstools application to write to any HPS-FPGA Bridge address" 
 SECTION = "rstools" 
@@ -6,7 +6,7 @@ LICENSE = "GPL-2"
 PR = "r0"
 LIC_FILES_CHKSUM = "file://CHECKSUMFILE;md5=87b5d45e84844e8cc3120f018557015c"
 SRC_URI = "gitsm://github.com/robseb/rstoolsCY5.git;protocol=https"
-SRCREV = "e319a9fc365131a87586654f3242cf0ba00912bb" 
+SRCREV = "${AUTOREV}" # use the newest commitment
 # use  git rev-parse HEAD to update
 
 inherit cmake
