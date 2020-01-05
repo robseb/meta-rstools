@@ -1,0 +1,7 @@
+#!/bin/sh
+# start up script 
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
+echo "The run Script was called"
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
+echo " Synchronization of the system time with a HTTP Server"
+htpdate -d -t -b www.linux.org www.google.com
