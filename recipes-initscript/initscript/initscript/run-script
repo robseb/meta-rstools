@@ -4,4 +4,5 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++"
 echo "The run Script was called"
 echo "++++++++++++++++++++++++++++++++++++++++++++++"
 echo " Synchronization of the system time with a HTTP Server"
-htpdate -d -t -b www.linux.org www.google.com
+htpdate -d -t -b -s www.linux.org
+echo "Time sync. done"
