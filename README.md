@@ -213,4 +213,4 @@ The source code of this layer is available in my [*rstoolsCY5*](https://github.c
 *meta-rstools* and *rstools* are projects, that I have fully developed on my own. No companies are involved in this projects.
 Today I'm a Master Student of electronic engineering with the major embedded systems. 
 
-[![Join the chat at https://gitter.im/rsyocto/community#](https://badges.gitter.im/rsyocto/BlockPets.svg)](https://gitter.im/rsyocto/community#)
+[![Gitter](https://badges.gitter.im/rsyocto/community.svg)](https://gitter.im/rsyocto/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
