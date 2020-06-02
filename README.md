@@ -214,3 +214,4 @@ The source code of this layer is available in my [*rstoolsCY5*](https://github.c
 Today I'm a Master Student of electronic engineering with the major embedded systems. 
 
 [![Gitter](https://badges.gitter.im/rsyocto/community.svg)](https://gitter.im/rsyocto/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Email me!](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](mailto:git@robseb.de)
