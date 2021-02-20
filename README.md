@@ -1,5 +1,8 @@
 # meta-rstools
 
+### **END OF LIFE: This meta layer was integrated into [meta-intelfpga](https://github.com/robseb/meta-intelfpga)!**
+<br>
+
 `meta-rstools` is a Layer for the Yocto project to add a simple way for fully accessing the FPGA Manager of the Intel (ALTERA) **Cyclone V SoC-FPGA (SoCFPGA)** and **Intel Arria 10 SX SoC-FPGA**.
 
 With a single command it is possible to change FPGA configuration or to read and write the *ARM AXI-Bridge* to the FPGA fabric. 
